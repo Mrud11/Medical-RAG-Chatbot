@@ -1,6 +1,4 @@
-
-# Medical-RAG-Chatbot
-Medical RAG Chatbot using MedQuAD dataset, FAISS retrieval, and LLM (OpenAI/Groq) for contextual AI-powered medical question answering
+# Medical RAG Chatbot
 
 A Retrieval-Augmented Generation (RAG) chatbot for medical FAQs using the MedQuAD dataset.  
 User types a medical question → app retrieves relevant context from the knowledge base (FAISS) → passes context to an LLM (OpenAI / Groq) → returns a contextual, concise answer.
@@ -27,7 +25,7 @@ User types a medical question → app retrieves relevant context from the knowle
 ## Setup — Local (Linux / macOS / WSL)
 ```bash
 # 1. clone
-git clone https://https://github.com/Mrud11/Medical-RAG-Chatbot.git
+git clone https://github.com/<you>/medical-rag-chatbot.git
 cd medical-rag-chatbot
 
 # 2. python env
@@ -44,7 +42,5 @@ pip install -r requirements.txt
 python src/build_index.py --data_path data/medquad.csv --out_dir ./data
 
 # 6. run app
-streamlit run src/app.pyz
-
-
+streamlit run src/app.py
 
