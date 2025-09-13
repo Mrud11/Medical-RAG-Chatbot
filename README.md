@@ -25,14 +25,23 @@ User types a medical question → app retrieves relevant context from the knowle
 ## Repository Structure
 
 medical-rag-chatbot/
+
 ├─ data/
+
 │ └─ medquad.csv # put dataset here (or mount Drive)
+
 ├─ src/
+
 │ ├─ build_index.py # precompute embeddings + FAISS index
+
 │ └─ app.py # Streamlit app (RAG + UI)
+
 ├─ requirements.txt
+
 ├─ README.md
+
 ├─ .gitignore
+
 └─ LICENSE
 
 
