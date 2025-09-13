@@ -1,9 +1,3 @@
-# Medical RAG Chatbot
-
-A Retrieval-Augmented Generation (RAG) chatbot for medical FAQs using the MedQuAD dataset.  
-User types a medical question → app retrieves relevant context from the knowledge base (FAISS) → passes context to an LLM (OpenAI / Groq) → returns a contextual, concise answer.
-
----
 
 # Medical RAG Chatbot
 
