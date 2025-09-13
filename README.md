@@ -46,6 +46,5 @@ python src/build_index.py --data_path data/medquad.csv --out_dir ./data
 # 6. run app
 streamlit run src/app.pyz
 
-#7. Outputs
-<img width="1166" height="437" alt="cb1" src="https://github.com/user-attachments/assets/4227db00-eb99-4526-955d-147c89aa0a24" />
+
 
