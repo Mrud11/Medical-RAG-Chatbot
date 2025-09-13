@@ -5,6 +5,13 @@ User types a medical question → app retrieves relevant context from the knowle
 
 ---
 
+# Medical RAG Chatbot
+
+A Retrieval-Augmented Generation (RAG) chatbot for medical FAQs using the MedQuAD dataset.  
+User types a medical question → app retrieves relevant context from the knowledge base (FAISS) → passes context to an LLM (OpenAI / Groq) → returns a contextual, concise answer.
+
+---
+
 ## Deliverables in this repository
 - `src/build_index.py` — preprocess dataset, chunk text, produce embeddings and FAISS index.
 - `src/app.py` — Streamlit UI + retrieval + LLM generation.
@@ -21,6 +28,19 @@ User types a medical question → app retrieves relevant context from the knowle
 3. The app retrieves top-k documents from FAISS, sends them to the LLM, and shows a concise answer citing the source indices.
 
 ---
+## Repository Structure
+
+medical-rag-chatbot/
+├─ data/
+│ └─ medquad.csv # put dataset here (or mount Drive)
+├─ src/
+│ ├─ build_index.py # precompute embeddings + FAISS index
+│ └─ app.py # Streamlit app (RAG + UI)
+├─ requirements.txt
+├─ README.md
+├─ .gitignore
+└─ LICENSE
+
 
 ## Setup — Local (Linux / macOS / WSL)
 ```bash
@@ -43,4 +63,3 @@ python src/build_index.py --data_path data/medquad.csv --out_dir ./data
 
 # 6. run app
 streamlit run src/app.py
-
