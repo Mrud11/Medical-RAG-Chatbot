@@ -27,7 +27,7 @@ User types a medical question → app retrieves relevant context from the knowle
 ## Setup — Local (Linux / macOS / WSL)
 ```bash
 # 1. clone
-git clone https://github.com/<you>/medical-rag-chatbot.git
+git clone https://https://github.com/Mrud11/Medical-RAG-Chatbot.git
 cd medical-rag-chatbot
 
 # 2. python env
