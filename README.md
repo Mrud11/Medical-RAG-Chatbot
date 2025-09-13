@@ -46,7 +46,3 @@ python src/build_index.py --data_path data/medquad.csv --out_dir ./data
 # 6. run app
 streamlit run src/app.py
 
-#7.Output
-![Alt text](D:\Users\Mirdula\Desktop\cb1.PNG)
-
-
