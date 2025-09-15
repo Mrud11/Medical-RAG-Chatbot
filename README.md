@@ -2,7 +2,7 @@
 # Medical RAG Chatbot
 
 A Retrieval-Augmented Generation (RAG) chatbot for medical FAQs using the MedQuAD dataset.  
-User types a medical question → app retrieves relevant context from the knowledge base (FAISS) → passes context to an LLM (OpenAI / Groq) → returns a contextual, concise answer.
+User types a medical question → app retrieves relevant context from the knowledge base (FAISS) → passes context to an LLM (OpenAI) → returns a contextual, concise answer.
 
 ---
 
@@ -28,7 +28,7 @@ medical-rag-chatbot/
 
 ├─ data/
 
-│ └─ medquad.csv # put dataset here (or mount Drive)
+│ └─ medquad.csv # dataset here (or mount Drive)
 
 ├─ src/
 
@@ -66,3 +66,26 @@ python src/build_index.py --data_path data/medquad.csv --out_dir ./data
 
 # 6. run app
 streamlit run src/app.py
+
+# 7. How it’s built — high level pipeline
+
+- Load dataset (CSV) → ensure columns question, answer or auto-detect first two columns.
+- Preprocess & chunk: split QA text into manageable chunks (sentence-based chunks ~150–200 words).
+- Embeddings: compute vector embeddings for chunks (sentence-transformers or OpenAI embeddings).
+- Vector index: normalize embeddings (for cosine) and save with FAISS (IndexFlatIP or IndexFlatL2).
+- Query-time:
+- Embed user query.
+- Retrieve top-k chunks from FAISS.
+- Build a short “context” string (source tags + text).
+- Call LLM with system prompt that instructs: “use ONLY this context; do not hallucinate; recommend consulting a doctor when needed.”
+- UI: present answer and show retrieved sources (optional expander) and include medical disclaimer.
+
+# 8. Safety & ethics (must have)
+
+- Always show a prominent disclaimer: not medical advice; consult professionals.
+
+- Use low sampling (temperature=0.0–0.2) to reduce hallucinations.
+
+- Log queries & responses for audit and quality review (anonymize PII).
+
+- For production clinical use, require human oversight, clinical validation, and regulatory compliance (HIPAA/GDPR etc.).
