@@ -27,21 +27,13 @@ User types a medical question → app retrieves relevant context from the knowle
 medical-rag-chatbot/
 
 ├─ data/
-
 │ └─ medquad.csv # dataset here (or mount Drive)
-
 ├─ src/
-
 │ ├─ build_index.py # precompute embeddings + FAISS index
-
 │ └─ app.py # Streamlit app (RAG + UI)
-
 ├─ requirements.txt
-
 ├─ README.md
-
 ├─ .gitignore
-
 └─ LICENSE
 
 
@@ -66,6 +58,7 @@ python src/build_index.py --data_path data/medquad.csv --out_dir ./data
 
 # 6. run app
 streamlit run src/app.py
+---
 
 # 7. How it’s built — high level pipeline
 
