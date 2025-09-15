@@ -58,8 +58,9 @@ python src/build_index.py --data_path data/medquad.csv --out_dir ./data
 
 # 6. run app
 streamlit run src/app.py
----
 
+```
+---
 # 7. How it’s built — high level pipeline
 
 - Load dataset (CSV) → ensure columns question, answer or auto-detect first two columns.
