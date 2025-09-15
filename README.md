@@ -24,17 +24,17 @@ User types a medical question → app retrieves relevant context from the knowle
 ---
 ## Repository Structure
 
+# Medical RAG Chatbot — RAG (FAISS) + LLM (OpenAI) for medical FAQs.
+Repo layout:
 medical-rag-chatbot/
-
-├─ data/
-│ └─ medquad.csv # dataset here (or mount Drive)
+├─ data/medquad.csv
 ├─ src/
-│ ├─ build_index.py # precompute embeddings + FAISS index
-│ └─ app.py # Streamlit app (RAG + UI)
+│  ├─ build_index.py
+│  └─ app.py
 ├─ requirements.txt
 ├─ README.md
-├─ .gitignore
-└─ LICENSE
+└─ LICENSE (MIT)
+
 
 
 ## Setup — Local (Linux / macOS / WSL)
