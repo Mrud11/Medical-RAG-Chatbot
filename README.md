@@ -79,4 +79,9 @@ streamlit run src/app.py
 - Always show a prominent disclaimer: not medical advice; consult professionals.
 - Use low sampling (temperature=0.0–0.2) to reduce hallucinations.
 - Log queries & responses for audit and quality review (anonymize PII).
-- For production clinical use, require human oversight, clinical validation, and regulatory compliance (HIPAA/GDPR etc.).
+- For production clinical use, require human oversight, clinical validation, and regulatory compliance (HIPAA/GDPR etc.)
+
+  
+## License
+
+MIT License
